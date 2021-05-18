@@ -1,0 +1,36 @@
+shader dots (
+	color Cin = 1,
+output	color Cout=0
+)
+{
+    color pink=color("rgb", 1.000, 0.694, 0.510);
+    color gold=color("rgb",0.741, 0.718, 0.420);
+    color dirtColor=color("rgb",0.627, 0.322, 0.176);
+    color dirt = color ("rgb",0.545, 0.271, 0.075);
+    float fuzz=0.025;
+    float dist;
+    float inDisk;
+    float dirtLineFuzz = 0.2;
+
+    float dirtDist = abs(v-0.99);
+    float inLine=1-smoothstep(0.1-dirtLineFuzz,0.1+dirtLineFuzz, dirtDist);
+    Cout=mix(pink,dirtColor,inLine);
+
+    float s=mod(u*4.8,1);
+    float t=mod(v*2.4,1);
+    point centre=point (0.2,0.2,0);
+    point here=point (s,t,0);
+
+    dist=distance(centre,here);
+    inDisk=1-smoothstep(0.07-fuzz,0.07+fuzz,dist);
+    Cout=mix(Cout,gold,inDisk);
+
+    point centre2=point (0.7,0.7,0);
+
+    dist=distance(centre2,here);
+    inDisk=1-smoothstep(0.07-fuzz,0.07+fuzz,dist);
+    Cout=mix(Cout,gold,inDisk);  
+
+
+
+}

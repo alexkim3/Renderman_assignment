@@ -1,0 +1,7 @@
+shader wood (output	color Cout=1
+	)
+{
+    Cout=(color)texture("seamlessWood.tx",u,v);
+
+}
+

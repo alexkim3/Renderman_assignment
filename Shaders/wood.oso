@@ -1,0 +1,13 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.8.2.pixar1697a56
+# options: 
+shader wood
+oparam	color	Cout	1 1 1		%read{2147483647,-1} %write{0,0}
+global	float	u	%read{0,0} %write{2147483647,-1} %derivs
+global	float	v	%read{0,0} %write{2147483647,-1} %derivs
+const	string	$const1	"seamlessWood.tx"		%read{0,0} %write{2147483647,-1}
+code ___main___
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\wood.osl:5
+# 
+	texture		Cout $const1 u v 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\wood.osl"} %line{5} %argrw{"wrrr"} %argderivs{2,3}
+	end
