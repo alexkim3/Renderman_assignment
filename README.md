@@ -1,10 +1,11 @@
 # Renderman Project
 This is a project created in python using Renderman API.
-![](MyCup.png) ![](MyCup2.png)
+![](MyCup.png) 
+![](MyCup2.png)
 The cup is modelled from the real-life reference: 
-![](cupreference.png)
+![](cupreference.PNG)
 The model is placed to the scene with the self created HDRI map:
-![](hdriprev.png)
+![](hdriprev.PNG)
 
 ##Installation
 To run the project its necessary to have Renderman and Python 2.7 or 3.7 installed. Run the project with command 
