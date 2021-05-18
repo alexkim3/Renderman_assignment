@@ -4,6 +4,7 @@ This is a project created in python using Renderman API.
 ![](MyCup2.png)
 The cup is modelled from the real-life reference: 
 ![](cupreference.PNG)
+
 The model is placed to the scene with the self created HDRI map:
 ![](hdriprev.PNG)
 
