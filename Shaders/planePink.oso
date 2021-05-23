@@ -6,14 +6,14 @@ param	color	Cin	1 1 1		%read{2147483647,-1} %write{2147483647,-1}
 oparam	color	resultRGB	0 0 0		%read{2147483647,-1} %write{1,1}
 local	color	pink	%read{1,1} %write{0,0}
 const	string	$const1	"rgb"		%read{0,0} %write{2147483647,-1}
-const	float	$const2	1		%read{0,0} %write{2147483647,-1}
-const	float	$const3	0.69400001		%read{0,0} %write{2147483647,-1}
+const	float	$const2	0.94999999		%read{0,0} %write{2147483647,-1}
+const	float	$const3	0.59399998		%read{0,0} %write{2147483647,-1}
 const	float	$const4	0.50999999		%read{0,0} %write{2147483647,-1}
 code ___main___
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\planePink.osl:4
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\planePink.osl:4
 #     resultRGB=pink;
-	color		pink $const1 $const2 $const3 $const4 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\planePink.osl"} %line{4} %argrw{"wrrrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\planePink.osl:5
+	color		pink $const1 $const2 $const3 $const4 	%filename{"C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\planePink.osl"} %line{4} %argrw{"wrrrr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\planePink.osl:5
 # 
 	assign		resultRGB pink 	%line{5} %argrw{"wr"}
 	end
