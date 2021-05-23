@@ -12,7 +12,7 @@ output	float resultD=0
     float inDisk=1-smoothstep(radius-fuzz,radius+fuzz,dist);
 
 
-    resultD=noise("perlin",P*50)*0.3;
+    resultD=noise("perlin",u*280, v*140)*0.25;
 
     float fuzz2=0.025; //borders
     float dist2;

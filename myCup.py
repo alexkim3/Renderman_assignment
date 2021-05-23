@@ -14,7 +14,7 @@ ri.ArchiveRecord(ri.COMMENT, "Created by " + getpass.getuser())
 ri.ArchiveRecord(ri.COMMENT, "Creation Date: " +time.ctime(time.time()))
 
 # now we add the display element using the usual elements
-ri.Display("MyCup.png", "it", "rgb")
+ri.Display("MyCupRender1.png", "file", "rgb")
 ri.Format(1920,1080,1)
 ri.Hider('raytrace' ,{'int incremental' :[1],'string pixelfiltermode' : 'importance'})
 ri.ShadingRate(10)
@@ -39,7 +39,7 @@ def cupBody(scalex, scaley, scalez, spherex, spherey, spherez, clip):
 ri.WorldBegin()
 
 ri.TransformBegin()
-ri.Translate(0,-1,40)
+ri.Translate(0,1,18)
 ri.Rotate(-170,0,1,0)
 
 #######################################################################
@@ -62,10 +62,12 @@ ri.TransformEnd()
 # end lighting
 #######################################################################
 ri.TransformBegin()
-ri.Translate(0,-1.8,0)
-ri.Rotate(-35,0,1,0)
-ri.Rotate(87,1,0,0)
-ri.Rotate(-8.5,0,1,0)
+
+##transform to lay the cup
+#ri.Translate(0,-1.8,0)
+#ri.Rotate(-35,0,1,0)
+#ri.Rotate(87,1,0,0)
+#ri.Rotate(-8.5,0,1,0)
 
 ri.AttributeBegin()
 #outter body
@@ -96,7 +98,7 @@ ri.Bxdf ("PxrDisney", "forTheCupOutter", {"reference color baseColor" : ["pinkSh
 ri.TransformBegin()
 ri.Translate(0 ,0.8,0)
 ri.Rotate(90,1,0,0)
-ri.Torus(1.93,0.05,0,360,360)
+ri.Torus(1.93,0.048,0,360,360)
 ri.TransformEnd()
 #outter bottom
 DiscRadius = 1.42
@@ -116,23 +118,26 @@ ri.Disk(0,1,360)
 ri.TransformEnd()
 ri.AttributeEnd()
 
-#holder
-ri.AttributeBegin()
-ri.Attribute ("displacementbound", {"sphere" : [1], "coordinatesystem" : ["object"]})
-ri.Pattern ("dispDots", "diskTx")
-ri.Displace ("PxrDisplace", "mydisp", {"float dispAmount" : [0.015], 
-    "reference float dispScalar" : ["diskTx:resultD"]})
-ri.Pattern ("planePink", "pinkShader", {})
-ri.Bxdf ("PxrDisney", "forTheCupOutter", {"reference color baseColor" : ["pinkShader:resultRGB"]})
+#the handle
+
 ri.TransformBegin()
+ri.AttributeBegin()
+
 ri.Rotate(40,0,1,0)
 ri.Translate(-2.12 ,-1.4,0)
 ri.Rotate(81,0,0,1)
 ri.Skew(28.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
 ri.Scale(1,1.2,1.5)
+ri.Attribute ("displacementbound", {"sphere" : [1], "coordinatesystem" : ["object"]})
+ri.Pattern ("dispHandle", "diskTx")
+ri.Displace ("PxrDisplace", "mydisp", {"float dispAmount" : [0.03], 
+    "reference float dispScalar" : ["diskTx:resultD"]})
+ri.Pattern ("planePink", "pinkShader", {})
+ri.Bxdf ("PxrDisney", "forTheCupOutter", {"reference color baseColor" : ["pinkShader:resultRGB"]})
 ri.Torus(1.1,0.18,0,360,210)
-ri.TransformEnd()
 ri.AttributeEnd()
+ri.TransformEnd()
+
 
 ri.TransformEnd()
 

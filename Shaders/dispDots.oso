@@ -2,10 +2,9 @@ OpenShadingLanguage 1.00
 # Compiled by oslc 1.8.2.pixar1697a56
 # options: 
 shader dispDots
-oparam	float	resultD	0		%read{47,54} %write{26,54}
-global	point	P	%read{24,24} %write{2147483647,-1}
-global	float	u	%read{1,28} %write{2147483647,-1}
-global	float	v	%read{7,34} %write{2147483647,-1}
+oparam	float	resultD	0		%read{48,55} %write{27,55}
+global	float	u	%read{1,29} %write{2147483647,-1}
+global	float	v	%read{7,35} %write{2147483647,-1}
 local	float	fuzz	%read{20,21} %write{0,0}
 local	float	s	%read{14,14} %write{6,6}
 local	float	t	%read{14,14} %write{12,12}
@@ -14,18 +13,18 @@ local	point	here	%read{15,15} %write{14,14}
 local	float	dist	%read{22,22} %write{15,15}
 local	float	radius	%read{20,21} %write{19,19}
 local	float	inDisk	%read{2147483647,-1} %write{23,23}
-local	float	fuzz2	%read{43,51} %write{27,27}
-local	float	dist2	%read{45,52} %write{42,49}
-local	float	inDisk2	%read{47,54} %write{46,53}
-local	float	s2	%read{40,40} %write{33,33}
-local	float	t2	%read{40,40} %write{39,39}
-local	point	here2	%read{42,49} %write{40,40}
-local	point	centre2	%read{42,49} %write{41,48}
+local	float	fuzz2	%read{44,52} %write{28,28}
+local	float	dist2	%read{46,53} %write{43,50}
+local	float	inDisk2	%read{48,55} %write{47,54}
+local	float	s2	%read{41,41} %write{34,34}
+local	float	t2	%read{41,41} %write{40,40}
+local	point	here2	%read{43,50} %write{41,41}
+local	point	centre2	%read{43,50} %write{42,49}
 const	float	$const1	0.1		%read{0,17} %write{2147483647,-1}
 temp	float	$tmp1	%read{3,6} %write{1,1}
 const	float	$const3	8		%read{1,1} %write{2147483647,-1}
-const	float	$const5	1		%read{3,53} %write{2147483647,-1}
-const	string	$const6	"mod"		%read{2,35} %write{2147483647,-1}
+const	float	$const5	1		%read{3,54} %write{2147483647,-1}
+const	string	$const6	"mod"		%read{2,36} %write{2147483647,-1}
 temp	float	$tmp2	%read{5,5} %write{4,4}
 temp	float	$tmp3	%read{4,4} %write{3,3}
 temp	float	$tmp4	%read{6,6} %write{5,5}
@@ -35,7 +34,7 @@ temp	float	$tmp6	%read{11,11} %write{10,10}
 temp	float	$tmp7	%read{10,10} %write{9,9}
 temp	float	$tmp8	%read{12,12} %write{11,11}
 const	point	$const9	0.5 0.5 0		%read{13,13} %write{2147483647,-1}
-const	float	$const11	0		%read{14,40} %write{2147483647,-1}
+const	float	$const11	0		%read{14,41} %write{2147483647,-1}
 temp	float	$tmp9	%read{19,19} %write{18,18}
 const	string	$const12	"cell"		%read{18,18} %write{2147483647,-1}
 temp	float	$tmp10	%read{18,18} %write{16,16}
@@ -44,36 +43,38 @@ const	float	$const13	0.40000001		%read{19,19} %write{2147483647,-1}
 temp	float	$tmp12	%read{23,23} %write{22,22}
 temp	float	$tmp13	%read{22,22} %write{20,20}
 temp	float	$tmp14	%read{22,22} %write{21,21}
-temp	float	$tmp15	%read{26,26} %write{25,25}
-const	string	$const14	"perlin"		%read{25,25} %write{2147483647,-1}
-temp	point	$tmp16	%read{25,25} %write{24,24}
-const	float	$const16	50		%read{24,24} %write{2147483647,-1}
-const	float	$const17	0.30000001		%read{26,26} %write{2147483647,-1}
-const	float	$const18	0.025		%read{27,27} %write{2147483647,-1}
-const	float	$const19	4.8000002		%read{28,28} %write{2147483647,-1}
-temp	float	$tmp17	%read{30,33} %write{28,28}
-temp	float	$tmp18	%read{32,32} %write{31,31}
-temp	float	$tmp19	%read{31,31} %write{30,30}
-temp	float	$tmp20	%read{33,33} %write{32,32}
-const	float	$const20	2.4000001		%read{34,34} %write{2147483647,-1}
-temp	float	$tmp21	%read{36,39} %write{34,34}
-temp	float	$tmp22	%read{38,38} %write{37,37}
-temp	float	$tmp23	%read{37,37} %write{36,36}
-temp	float	$tmp24	%read{39,39} %write{38,38}
-const	point	$const21	0.2 0.2 0		%read{41,41} %write{2147483647,-1}
-temp	float	$tmp25	%read{46,46} %write{45,45}
-const	float	$const22	0.07		%read{43,51} %write{2147483647,-1}
-temp	float	$tmp26	%read{45,45} %write{43,43}
-temp	float	$tmp27	%read{45,45} %write{44,44}
-const	point	$const23	0.69999999 0.69999999 0		%read{48,48} %write{2147483647,-1}
-temp	float	$tmp28	%read{53,53} %write{52,52}
-temp	float	$tmp29	%read{52,52} %write{50,50}
-temp	float	$tmp30	%read{52,52} %write{51,51}
+temp	float	$tmp15	%read{27,27} %write{26,26}
+const	string	$const14	"perlin"		%read{26,26} %write{2147483647,-1}
+temp	float	$tmp16	%read{26,26} %write{24,24}
+const	float	$const16	280		%read{24,24} %write{2147483647,-1}
+temp	float	$tmp17	%read{26,26} %write{25,25}
+const	float	$const18	140		%read{25,25} %write{2147483647,-1}
+const	float	$const19	0.25		%read{27,27} %write{2147483647,-1}
+const	float	$const20	0.025		%read{28,28} %write{2147483647,-1}
+const	float	$const21	4.8000002		%read{29,29} %write{2147483647,-1}
+temp	float	$tmp18	%read{31,34} %write{29,29}
+temp	float	$tmp19	%read{33,33} %write{32,32}
+temp	float	$tmp20	%read{32,32} %write{31,31}
+temp	float	$tmp21	%read{34,34} %write{33,33}
+const	float	$const22	2.4000001		%read{35,35} %write{2147483647,-1}
+temp	float	$tmp22	%read{37,40} %write{35,35}
+temp	float	$tmp23	%read{39,39} %write{38,38}
+temp	float	$tmp24	%read{38,38} %write{37,37}
+temp	float	$tmp25	%read{40,40} %write{39,39}
+const	point	$const23	0.2 0.2 0		%read{42,42} %write{2147483647,-1}
+temp	float	$tmp26	%read{47,47} %write{46,46}
+const	float	$const24	0.07		%read{44,52} %write{2147483647,-1}
+temp	float	$tmp27	%read{46,46} %write{44,44}
+temp	float	$tmp28	%read{46,46} %write{45,45}
+const	point	$const25	0.69999999 0.69999999 0		%read{49,49} %write{2147483647,-1}
+temp	float	$tmp29	%read{54,54} %write{53,53}
+temp	float	$tmp30	%read{53,53} %write{51,51}
+temp	float	$tmp31	%read{53,53} %write{52,52}
 code ___main___
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:6
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:6
 #     float s=mod(8*u,1);
-	assign		fuzz $const1 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl"} %line{6} %argrw{"wr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:7
+	assign		fuzz $const1 	%filename{"C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl"} %line{6} %argrw{"wr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:7
 #     float t=mod(4*v,1);
 	mul		$tmp1 $const3 u 	%line{7} %argrw{"wrr"}
 	functioncall	$const6 7 	%argrw{"r"}
@@ -83,9 +84,9 @@ code ___main___
 	floor		$tmp2 $tmp3 	%argrw{"wr"}
 	mul		$tmp4 $const5 $tmp2 	%argrw{"wrr"}
 	sub		s $tmp1 $tmp4 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:8
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:8
 #     point centre=point (0.5,0.5,0);
-	mul		$tmp5 $const8 v 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl"} %line{8} %argrw{"wrr"}
+	mul		$tmp5 $const8 v 	%filename{"C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl"} %line{8} %argrw{"wrr"}
 	functioncall	$const6 13 	%argrw{"r"}
 # C:/Program Files\\Pixar\\RenderManProServer-23.5\\lib\\osl\\include\\stdosl.h:136
 # point  mod (point  a, point  b) { return a - b*floor(a/b); }
@@ -93,86 +94,87 @@ code ___main___
 	floor		$tmp6 $tmp7 	%argrw{"wr"}
 	mul		$tmp8 $const5 $tmp6 	%argrw{"wrr"}
 	sub		t $tmp5 $tmp8 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:9
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:9
 #     point here=point (s,t,0);
-	assign		centre $const9 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl"} %line{9} %argrw{"wr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:10
+	assign		centre $const9 	%filename{"C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl"} %line{9} %argrw{"wr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:10
 #     float dist=distance(centre,here);
 	point		here s t $const11 	%line{10} %argrw{"wrrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:11
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:11
 #     float radius=(float) noise("cell",0.1*u,0.1*v)*0.4;
 	distance	dist centre here 	%line{11} %argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:12
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:12
 #     float inDisk=1-smoothstep(radius-fuzz,radius+fuzz,dist);
 	mul		$tmp10 $const1 u 	%line{12} %argrw{"wrr"}
 	mul		$tmp11 $const1 v 	%argrw{"wrr"}
 	noise		$tmp9 $const12 $tmp10 $tmp11 	%argrw{"wrrr"}
 	mul		radius $tmp9 $const13 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:13
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:13
 # 
 	sub		$tmp13 radius fuzz 	%line{13} %argrw{"wrr"}
 	add		$tmp14 radius fuzz 	%argrw{"wrr"}
 	smoothstep	$tmp12 $tmp13 $tmp14 dist 	%argrw{"wrrr"}
 	sub		inDisk $const5 $tmp12 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:16
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:16
 # 
-	mul		$tmp16 P $const16 	%line{16} %argrw{"wrr"}
-	noise		$tmp15 $const14 $tmp16 	%argrw{"wrr"}
-	mul		resultD $tmp15 $const17 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:18
+	mul		$tmp16 u $const16 	%line{16} %argrw{"wrr"}
+	mul		$tmp17 v $const18 	%argrw{"wrr"}
+	noise		$tmp15 $const14 $tmp16 $tmp17 	%argrw{"wrrr"}
+	mul		resultD $tmp15 $const19 	%argrw{"wrr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:18
 #     float dist2;
-	assign		fuzz2 $const18 	%line{18} %argrw{"wr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:22
+	assign		fuzz2 $const20 	%line{18} %argrw{"wr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:22
 #     float t2=mod(v*2.4,1);
-	mul		$tmp17 u $const19 	%line{22} %argrw{"wrr"}
-	functioncall	$const6 34 	%argrw{"r"}
+	mul		$tmp18 u $const21 	%line{22} %argrw{"wrr"}
+	functioncall	$const6 35 	%argrw{"r"}
 # C:/Program Files\\Pixar\\RenderManProServer-23.5\\lib\\osl\\include\\stdosl.h:136
 # float hypot (float a, float b) { return sqrt (a*a + b*b); }
-	div		$tmp19 $tmp17 $const5 	%filename{"C:/Program Files\\Pixar\\RenderManProServer-23.5\\lib\\osl\\include\\stdosl.h"} %line{136} %argrw{"wrr"}
-	floor		$tmp18 $tmp19 	%argrw{"wr"}
-	mul		$tmp20 $const5 $tmp18 	%argrw{"wrr"}
-	sub		s2 $tmp17 $tmp20 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:23
+	div		$tmp20 $tmp18 $const5 	%filename{"C:/Program Files\\Pixar\\RenderManProServer-23.5\\lib\\osl\\include\\stdosl.h"} %line{136} %argrw{"wrr"}
+	floor		$tmp19 $tmp20 	%argrw{"wr"}
+	mul		$tmp21 $const5 $tmp19 	%argrw{"wrr"}
+	sub		s2 $tmp18 $tmp21 	%argrw{"wrr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:23
 #     point here2=point (s2,t2,0);
-	mul		$tmp21 v $const20 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl"} %line{23} %argrw{"wrr"}
-	functioncall	$const6 40 	%argrw{"r"}
+	mul		$tmp22 v $const22 	%filename{"C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl"} %line{23} %argrw{"wrr"}
+	functioncall	$const6 41 	%argrw{"r"}
 # C:/Program Files\\Pixar\\RenderManProServer-23.5\\lib\\osl\\include\\stdosl.h:136
 # PERCOMP1 (inversesqrt)
-	div		$tmp23 $tmp21 $const5 	%filename{"C:/Program Files\\Pixar\\RenderManProServer-23.5\\lib\\osl\\include\\stdosl.h"} %line{136} %argrw{"wrr"}
-	floor		$tmp22 $tmp23 	%argrw{"wr"}
-	mul		$tmp24 $const5 $tmp22 	%argrw{"wrr"}
-	sub		t2 $tmp21 $tmp24 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:24
+	div		$tmp24 $tmp22 $const5 	%filename{"C:/Program Files\\Pixar\\RenderManProServer-23.5\\lib\\osl\\include\\stdosl.h"} %line{136} %argrw{"wrr"}
+	floor		$tmp23 $tmp24 	%argrw{"wr"}
+	mul		$tmp25 $const5 $tmp23 	%argrw{"wrr"}
+	sub		t2 $tmp22 $tmp25 	%argrw{"wrr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:24
 #     point centre2=point (0.2,0.2,0);
-	point		here2 s2 t2 $const11 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl"} %line{24} %argrw{"wrrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:25
+	point		here2 s2 t2 $const11 	%filename{"C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl"} %line{24} %argrw{"wrrr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:25
 #     
-	assign		centre2 $const21 	%line{25} %argrw{"wr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:27
+	assign		centre2 $const23 	%line{25} %argrw{"wr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:27
 #     inDisk2=1-smoothstep(0.07-fuzz2,0.07+fuzz2,dist2); //disk radius
 	distance	dist2 centre2 here2 	%line{27} %argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:28
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:28
 #     resultD+=inDisk2;
-	sub		$tmp26 $const22 fuzz2 	%line{28} %argrw{"wrr"}
-	add		$tmp27 $const22 fuzz2 	%argrw{"wrr"}
-	smoothstep	$tmp25 $tmp26 $tmp27 dist2 	%argrw{"wrrr"}
-	sub		inDisk2 $const5 $tmp25 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:29
+	sub		$tmp27 $const24 fuzz2 	%line{28} %argrw{"wrr"}
+	add		$tmp28 $const24 fuzz2 	%argrw{"wrr"}
+	smoothstep	$tmp26 $tmp27 $tmp28 dist2 	%argrw{"wrrr"}
+	sub		inDisk2 $const5 $tmp26 	%argrw{"wrr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:29
 # 
 	add		resultD resultD inDisk2 	%line{29} %argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:31
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:31
 #     dist2=distance(centre2,here2);
-	assign		centre2 $const23 	%line{31} %argrw{"wr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:32
+	assign		centre2 $const25 	%line{31} %argrw{"wr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:32
 #     inDisk2=1-smoothstep(0.07-fuzz2,0.07+fuzz2,dist2); //disk radius
 	distance	dist2 centre2 here2 	%line{32} %argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:33
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:33
 #     resultD+=inDisk2;
-	sub		$tmp29 $const22 fuzz2 	%line{33} %argrw{"wrr"}
-	add		$tmp30 $const22 fuzz2 	%argrw{"wrr"}
-	smoothstep	$tmp28 $tmp29 $tmp30 dist2 	%argrw{"wrrr"}
-	sub		inDisk2 $const5 $tmp28 	%argrw{"wrr"}
-# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\dispDots.osl:34
+	sub		$tmp30 $const24 fuzz2 	%line{33} %argrw{"wrr"}
+	add		$tmp31 $const24 fuzz2 	%argrw{"wrr"}
+	smoothstep	$tmp29 $tmp30 $tmp31 dist2 	%argrw{"wrrr"}
+	sub		inDisk2 $const5 $tmp29 	%argrw{"wrr"}
+# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\dispDots.osl:34
 # 
 	add		resultD resultD inDisk2 	%line{34} %argrw{"wrr"}
 	end
