@@ -14,7 +14,7 @@ ri.ArchiveRecord(ri.COMMENT, "Created by " + getpass.getuser())
 ri.ArchiveRecord(ri.COMMENT, "Creation Date: " +time.ctime(time.time()))
 
 # now we add the display element using the usual elements
-ri.Display("MyCupRender1.png", "file", "rgb")
+ri.Display("MyCupRender1.png", "it", "rgb")
 ri.Format(1920,1080,1)
 ri.Hider('raytrace' ,{'int incremental' :[1],'string pixelfiltermode' : 'importance'})
 ri.ShadingRate(10)
