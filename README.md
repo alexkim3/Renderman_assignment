@@ -1,10 +1,10 @@
 # Renderman Project
 This is a project created in python using Renderman API.
 
-![](SupportingImages//MyCup.PNG)
+![](SupportingImages//MyCup.png)
 <em><span style="color:grey">This is only reference image. For full HD image check MyCupRender1 images.</span></em>
 
-![](SupportingImages//MyCup2.PNG)
+![](SupportingImages//MyCup2.png)
 <em><span style="color:grey">This is only reference image. For full HD image check MyCupRender2 images.</span></em>
 
 =======
