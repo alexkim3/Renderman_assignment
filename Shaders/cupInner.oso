@@ -36,18 +36,17 @@ temp	float	$tmp11	%read{17,17} %write{16,16}
 const	float	$const14	0.0049999999		%read{14,15} %write{2147483647,-1}
 temp	float	$tmp12	%read{16,16} %write{14,14}
 temp	float	$tmp13	%read{16,16} %write{15,15}
-const	float	$const15	1		%read{17,17} %write{2147483647,-1}
-const	float	$const16	0.94999999		%read{18,18} %write{2147483647,-1}
-const	float	$const17	0.59399998		%read{18,18} %write{2147483647,-1}
-const	float	$const18	0.50999999		%read{18,18} %write{2147483647,-1}
+const	float	$const15	1		%read{17,18} %write{2147483647,-1}
+const	float	$const16	0.69400001		%read{18,18} %write{2147483647,-1}
+const	float	$const17	0.50999999		%read{18,18} %write{2147483647,-1}
 code ___main___
-# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl:4
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl:4
 #     float fuzz=0.4;
-	color		dirt $const1 $const2 $const3 $const3 	%filename{"C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl"} %line{4} %argrw{"wrrrr"}
-# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl:5
+	color		dirt $const1 $const2 $const3 $const3 	%filename{"C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl"} %line{4} %argrw{"wrrrr"}
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl:5
 #     float s=v+sin(u*2*M_PI)*0.05+sin(u*4*M_PI)*0.03;
 	assign		fuzz $const4 	%line{5} %argrw{"wr"}
-# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl:6
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl:6
 #     float dist=abs(s-0.8);
 	mul		$tmp2 u $const6 	%line{6} %argrw{"wrr"}
 	mul		$tmp3 $tmp2 $const7 	%argrw{"wrr"}
@@ -59,20 +58,20 @@ code ___main___
 	sin		$tmp6 $tmp8 	%argrw{"wr"}
 	mul		$tmp9 $tmp6 $const11 	%argrw{"wrr"}
 	add		s $tmp5 $tmp9 	%argrw{"wrr"}
-# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl:7
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl:7
 #     float inLine=1-smoothstep(0.005-fuzz,0.005+fuzz,dist);
 	sub		$tmp10 s $const12 	%line{7} %argrw{"wrr"}
 	abs		dist $tmp10 	%argrw{"wr"}
-# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl:8
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl:8
 # 
 	sub		$tmp12 $const14 fuzz 	%line{8} %argrw{"wrr"}
 	add		$tmp13 $const14 fuzz 	%argrw{"wrr"}
 	smoothstep	$tmp11 $tmp12 $tmp13 dist 	%argrw{"wrrr"}
 	sub		inLine $const15 $tmp11 	%argrw{"wrr"}
-# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl:10
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl:10
 # 
-	color		pink $const1 $const16 $const17 $const18 	%line{10} %argrw{"wrrrr"}
-# C:\\Users\\alexk\\github\\Renderman_assignment\\Shaders\\cupInner.osl:12
+	color		pink $const1 $const15 $const16 $const17 	%line{10} %argrw{"wrrrr"}
+# C:\\Users\\alexk\\Desktop\\BU\\Renderman\\cupInner.osl:12
 # 
 	mix		resultRGB pink dirt inLine 	%line{12} %argrw{"wrrr"}
 	end

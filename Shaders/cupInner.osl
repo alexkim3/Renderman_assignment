@@ -6,7 +6,7 @@ shader cupInner (color Cin = 1,output color resultRGB=0)
     float dist=abs(s-0.8);
     float inLine=1-smoothstep(0.005-fuzz,0.005+fuzz,dist);
 
-    color pink = color("rgb", 0.950, 0.594, 0.510);
+    color pink = color("rgb", 1.000, 0.694, 0.510);
 
     resultRGB=mix(pink,dirt,inLine);
 

@@ -1,6 +1,6 @@
 shader dots (output color Cout=0)
 {
-    color pink=color("rgb", 0.950, 0.594, 0.510);
+    color pink=color("rgb", 1.000, 0.694, 0.510);
     color gold=color("rgb",0.741, 0.718, 0.420);
     color dirtColor=color("rgb",0.627, 0.322, 0.176);
     color dirt = color ("rgb",0.627, 0.322, 0.176);

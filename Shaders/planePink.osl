@@ -1,6 +1,6 @@
 shader planePink (color Cin = 1,output color resultRGB=0)
 {
-    color pink=color("rgb", 0.950, 0.594, 0.510);
+    color pink=color("rgb", 1.000, 0.694, 0.510);
     resultRGB=pink;
 
     
